@@ -3,9 +3,11 @@ package com.pattysweetapp.repository;
 import com.pattysweetapp.models.TrackingPrice;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface TrackingPriceRepository extends MongoRepository <TrackingPrice, String> {
 
 
