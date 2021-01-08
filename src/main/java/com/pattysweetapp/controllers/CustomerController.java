@@ -26,22 +26,10 @@ public class CustomerController {
         return customerRepository.findCustomersBy(lineID);
     }
 
-    @RequestMapping(method= RequestMethod.POST, value="/findByLineID")
-    public Customer findByLineID(@RequestBody Customer customer) {
-        System.out.println("findByLineID lineID="+customer.getLineID());
-        return customerRepository.findByLineID(customer.getLineID());
-    }
-
-    @RequestMapping(method= RequestMethod.POST, value="/findCustomerByLineID")
-    public Customer findCustomerByLineID(@RequestBody String lineID) {
-        System.out.println("findCustomerByLineID lineID="+lineID);
-        return customerRepository.findByLineID(lineID);
-    }
-
-    @RequestMapping(method= RequestMethod.POST, value="/findByLineIDLike")
-    public Customer findByLineIDLike(@RequestBody Customer customer) {
-        System.out.println("findByLineIDLike lineID="+customer.getLineID());
-        return customerRepository.findByLineIDLike(customer.getLineID());
+    @RequestMapping(method= RequestMethod.POST, value="/findByNickNameLike")
+    public List<Customer> findByNickNameLike(@RequestBody Customer customer) {
+        System.out.println("findByNickNameLike lineID="+customer.getNickName());
+        return customerRepository.findByNickNameLike(customer.getNickName());
     }
 
     @RequestMapping(method=RequestMethod.POST, value="/customer")
@@ -50,8 +38,7 @@ public class CustomerController {
         customer.setCreatedDate(DateTimeUtils.getSystemDate());
         customer.setUpdatedDate(DateTimeUtils.getSystemDate());
         customerRepository.save(customer);
-
-        return "Customer saved id="+customer.getId()+" is Successes.";
+        return "Customer saved id="+customer.getNickName()+" is Successes.";
     }
 
 

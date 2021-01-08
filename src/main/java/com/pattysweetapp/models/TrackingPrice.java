@@ -2,7 +2,6 @@ package com.pattysweetapp.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.util.Date;
 
 @Document(collection = "trackingprices")
@@ -12,6 +11,7 @@ public class TrackingPrice {
     private  String prodName;
     private  double prodPrice;
     private  String lineID;
+    private String  nickName;
     private Date createdDate;
     private Date updatedDate;
 
@@ -84,5 +84,13 @@ public class TrackingPrice {
 
     public void setUpdatedDate(Date updatedDate) {
         this.updatedDate = updatedDate;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 }

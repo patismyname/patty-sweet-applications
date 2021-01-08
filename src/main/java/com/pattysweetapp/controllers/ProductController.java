@@ -36,7 +36,7 @@ public class ProductController {
         product.setUpdatedDate(DateTimeUtils.getSystemDate());
         productRepository.save(product);
 
-        return product.getId();
+        return "Product Name saved="+product.getProdName()+" is Success";
     }
 
     @RequestMapping(method=RequestMethod.GET, value="/product/{id}")

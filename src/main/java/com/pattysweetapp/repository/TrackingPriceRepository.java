@@ -10,7 +10,6 @@ import java.util.List;
 @Repository
 public interface TrackingPriceRepository extends MongoRepository <TrackingPrice, String> {
 
-
 @Query("{'Product.id':?0}")
 public List<TrackingPrice> findByProductId(String id);
 

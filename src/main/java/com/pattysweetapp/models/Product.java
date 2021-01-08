@@ -18,8 +18,6 @@ public class Product {
 	private Date createdDate;
 	private Date updatedDate;
 
-
-
 	public Product() {
 		this.prodName="";
 		this.prodDesc="";

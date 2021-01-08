@@ -10,8 +10,14 @@ import java.util.List;
 public interface CustomerRepository  extends MongoRepository<Customer,String> {
     public List<Customer> findCustomersBy(String lineID);
 
-    public  Customer findByLineID(String lineID);
+    /**
+     *
+     * @param nickName
+     * @return
+     */
+    public List<Customer>findByNickNameLike(String nickName);
 
-    public Customer findByLineIDLike(String lineID);
+
+
 
 }
