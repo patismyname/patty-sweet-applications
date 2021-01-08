@@ -14,6 +14,7 @@ public class TrackingPrice {
     private String  nickName;
     private Date createdDate;
     private Date updatedDate;
+    private  String status;
 
     private Product product;
     private Customer customer;
