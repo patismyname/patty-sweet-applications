@@ -16,8 +16,6 @@ public class TrackingPrice {
     private Date updatedDate;
     private  String status;
 
-    private Product product;
-    private Customer customer;
 
     public  TrackingPrice(){
 
@@ -61,22 +59,6 @@ public class TrackingPrice {
 
     public void setLineID(String lineID) {
         this.lineID = lineID;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
     }
 
     public Date getCreatedDate() {
