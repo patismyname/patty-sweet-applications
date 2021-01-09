@@ -1,10 +1,13 @@
 package com.pattysweetapp.controllers;
 
 import com.pattysweetapp.models.Customer;
+import com.pattysweetapp.models.TrackingPrice;
 import com.pattysweetapp.repository.CustomerRepository;
 import com.pattysweetapp.utils.DateTimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -41,6 +44,11 @@ public class CustomerController {
         customer.setUpdatedDate(DateTimeUtils.getSystemDate());
         customerRepository.save(customer);
         return "Customer saved id="+customer.getNickName()+" is Successes.";
+    }
+
+    @RequestMapping(method=RequestMethod.GET, value="/customer/{id}")
+    public Optional<Customer> show(@PathVariable String id) {
+        return customerRepository.findById(id);
     }
 
     @ExceptionHandler(RuntimeException.class)

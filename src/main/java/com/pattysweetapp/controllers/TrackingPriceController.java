@@ -33,7 +33,7 @@ public class TrackingPriceController {
         return "Created Success="+trackingPrice.getId();
     }
 
-    @RequestMapping(method=RequestMethod.GET, value="/product/{id}")
+    @RequestMapping(method=RequestMethod.GET, value="/trackingprice/{id}")
     public Optional<TrackingPrice> show(@PathVariable String id) {
         return trackingPriceRepository.findById(id);
     }
