@@ -1,6 +1,5 @@
 package com.pattysweetapp.controllers;
 
-import com.pattysweetapp.models.Product;
 import com.pattysweetapp.models.TrackingPrice;
 import com.pattysweetapp.repository.TrackingPriceRepository;
 import com.pattysweetapp.utils.DateTimeUtils;
@@ -8,10 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1")
 public class TrackingPriceController {
     @Autowired
     TrackingPriceRepository trackingPriceRepository;
@@ -32,5 +32,11 @@ public class TrackingPriceController {
 
         return "Created Success="+trackingPrice.getId();
     }
+
+    @RequestMapping(method=RequestMethod.GET, value="/product/{id}")
+    public Optional<TrackingPrice> show(@PathVariable String id) {
+        return trackingPriceRepository.findById(id);
+    }
+
 
 }

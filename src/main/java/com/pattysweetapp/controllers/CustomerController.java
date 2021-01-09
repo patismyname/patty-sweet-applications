@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1")
 public class CustomerController {
     private final static Logger LOGGER = LoggerFactory.getLogger(CustomerController.class);
     @Autowired
