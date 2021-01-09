@@ -3,6 +3,7 @@ package com.pattysweetapp.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
+import java.util.List;
 
 @Document(collection = "trackingprices")
 public class TrackingPrice {
@@ -15,6 +16,8 @@ public class TrackingPrice {
     private Date createdDate;
     private Date updatedDate;
     private  String status;
+    private Customer customer;
+    private List<Product> productList;
 
 
     public  TrackingPrice(){
@@ -83,5 +86,21 @@ public class TrackingPrice {
 
     public void setNickName(String nickName) {
         this.nickName = nickName;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
     }
 }
