@@ -14,7 +14,7 @@ public class Product {
 	private String prodDesc;
 	private Double prodPrice;
 	private String prodImage;
-	private String statusType;
+	private String status;
 	private Date createdDate;
 	private Date updatedDate;
 
@@ -23,18 +23,18 @@ public class Product {
 		this.prodDesc="";
 		this.prodPrice=0.00;
 		this.prodImage="";
-		this.statusType="";
+		this.status="";
 		this.createdDate=null;
 		this.updatedDate=null;
 	}
 
-	public Product(String prodName, String prodDesc, Double prodPrice, String prodImage,String statusType) {
+	public Product(String prodName, String prodDesc, Double prodPrice, String prodImage,String status) {
 		super();
 		this.prodName = prodName;
 		this.prodDesc = prodDesc;
 		this.prodPrice = prodPrice;
 		this.prodImage = prodImage;
-		this.statusType=statusType;
+		this.status=status;
 	}
 
 	public String getId() {
@@ -77,12 +77,12 @@ public class Product {
 		this.prodImage = prodImage;
 	}
 
-	public String getStatusType() {
-		return statusType;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setStatusType(String statusType) {
-		this.statusType = statusType;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public Date getCreatedDate() {

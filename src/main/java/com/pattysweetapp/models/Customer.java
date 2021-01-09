@@ -15,6 +15,7 @@ public class Customer {
     private  String lastName;
     private  String nickName;
     private  String mobileNo;
+    private String status;
     private Date createdDate;
     private  Date updatedDate;
     public Customer(){
@@ -90,6 +91,15 @@ public class Customer {
     public void setUpdatedDate(Date updatedDate) {
         this.updatedDate = updatedDate;
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public  String toString(){
         return  String.format("Customer [id=%s, firstname='%s', lastname='%s',nickname='%s',MobileNo='%s']",id,firstName,lastName,nickName,mobileNo);
     }
