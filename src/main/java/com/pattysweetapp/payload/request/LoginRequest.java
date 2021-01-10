@@ -9,6 +9,9 @@ public class LoginRequest {
 	@NotBlank
 	private String password;
 
+	private  String status;
+
+
 	public String getUsername() {
 		return username;
 	}

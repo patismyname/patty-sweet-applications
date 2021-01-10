@@ -4,6 +4,8 @@ import com.pattysweetapp.models.Product;
 import com.pattysweetapp.repository.ProductRepository;
 import com.pattysweetapp.utils.DateTimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,11 +17,14 @@ import java.util.Optional;
 public class ProductController {
 
 	@Autowired
-    ProductRepository productRepository;
+    private  ProductRepository productRepository;
 
     @RequestMapping(method=RequestMethod.GET, value="/products")
-    public List<Product> product() {
-        return productRepository.findAll();
+    public ResponseEntity <List<Product>> findAll() {
+
+       // return productRepository.findAll();
+        List<Product> products =this.productRepository.findAll();
+        return  new ResponseEntity<List<Product>>(products, HttpStatus.OK);
     }
 
 

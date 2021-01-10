@@ -21,6 +21,11 @@ public class UserDetailsImpl implements UserDetails {
 
 	private String email;
 
+	private  int status;
+
+	private  int expiresin;
+	private  String message;
+
 	@JsonIgnore
 	private String password;
 
@@ -89,6 +94,30 @@ public class UserDetailsImpl implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		return true;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	public int getExpiresin() {
+		return expiresin;
+	}
+
+	public void setExpiresin(int expiresin) {
+		this.expiresin = expiresin;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override
