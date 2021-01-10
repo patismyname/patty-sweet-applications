@@ -23,7 +23,7 @@ public class UserDetailsImpl implements UserDetails {
 
 	private  int status;
 
-	private  int expiresin;
+	private  int expires_in;
 	private  String message;
 
 	@JsonIgnore
@@ -104,12 +104,12 @@ public class UserDetailsImpl implements UserDetails {
 		this.status = status;
 	}
 
-	public int getExpiresin() {
-		return expiresin;
+	public int getExpires_in() {
+		return expires_in;
 	}
 
-	public void setExpiresin(int expiresin) {
-		this.expiresin = expiresin;
+	public void setExpires_in(int expires_in) {
+		this.expires_in = expires_in;
 	}
 
 	public String getMessage() {

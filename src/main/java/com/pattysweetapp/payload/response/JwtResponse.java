@@ -12,11 +12,11 @@ public class JwtResponse {
 	private String email;
 	private int status;
 	private  String message;
-	private  int expiresin;
+	private  int expires_in;
 	private HttpStatus httpStatus;
 	private List<String> roles;
 
-	public JwtResponse(HttpStatus httpStatus,String accessToken, String id, String username, String email, int status,String message,int expiresin, List<String> roles) {
+	public JwtResponse(HttpStatus httpStatus,String accessToken, String id, String username, String email, int status,String message,int expires_in, List<String> roles) {
 		this.httpStatus=httpStatus;
 		this.token = accessToken;
 		this.id = id;
@@ -24,7 +24,7 @@ public class JwtResponse {
 		this.email = email;
 		this.status=status;
 		this.message=message;
-		this.expiresin=expiresin;
+		this.expires_in=expires_in;
 		this.roles = roles;
 	}
 
@@ -84,12 +84,20 @@ public class JwtResponse {
 		this.message = message;
 	}
 
-	public int getExpiresin() {
-		return expiresin;
+	public int getExpires_in() {
+		return expires_in;
 	}
 
-	public void setExpiresin(int expiresin) {
-		this.expiresin = expiresin;
+	public void setExpires_in(int expires_in) {
+		this.expires_in = expires_in;
+	}
+
+	public HttpStatus getHttpStatus() {
+		return httpStatus;
+	}
+
+	public void setHttpStatus(HttpStatus httpStatus) {
+		this.httpStatus = httpStatus;
 	}
 
 	public List<String> getRoles() {

@@ -60,28 +60,29 @@ public class AuthController {
 	@PostMapping("/login")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
-		System.out.println("username:"+loginRequest.getUsername()+" password:"+loginRequest.getPassword());
+		//System.out.println("username:"+loginRequest.getUsername()+" password:"+loginRequest.getPassword());
 		Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
 
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		String jwt = jwtUtils.generateJwtToken(authentication);
-		System.out.println("jwt:"+jwt);
+		//System.out.println("jwt:"+jwt);
 		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();		
 		List<String> roles = userDetails.getAuthorities().stream()
 				.map(item -> item.getAuthority())
 				.collect(Collectors.toList());
-		System.out.println("Http Status:"+HttpStatus.OK);
+		//System.out.println("Http Status:"+HttpStatus.OK);
 		userDetails.setStatus(200);
-		userDetails.setExpiresin(3600);
+		userDetails.setExpires_in(3600);
 		userDetails.setMessage(Authorized);
+
 		return ResponseEntity.ok(new JwtResponse(HttpStatus.OK,jwt,
 												 userDetails.getId(), 
 												 userDetails.getUsername(), 
 												 userDetails.getEmail(),
 												 userDetails.getStatus(),
 												 userDetails.getMessage(),
-												 userDetails.getExpiresin(),
+												 userDetails.getExpires_in(),
 												 roles));
 	}
 
